@@ -27,4 +27,41 @@
       emptyTip.hidden = visibleCount !== 0;
     });
   });
+
+  /* 深浅色主题切换：读取 localStorage，未设置时跟随系统 */
+  var THEME_KEY = 'portfolio-theme';
+  var toggleButton = document.getElementById('theme-toggle');
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    if (toggleButton) {
+      toggleButton.setAttribute('aria-pressed', theme === 'dark');
+    }
+  }
+
+  (function initTheme() {
+    var saved = null;
+    try {
+      saved = localStorage.getItem(THEME_KEY);
+    } catch (err) {
+      saved = null;
+    }
+    var prefersDark =
+      window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(saved || (prefersDark ? 'dark' : 'light'));
+  })();
+
+  if (toggleButton) {
+    toggleButton.addEventListener('click', function () {
+      var current =
+        document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      var next = current === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+      try {
+        localStorage.setItem(THEME_KEY, next);
+      } catch (err) {
+        /* localStorage 不可用时忽略，仅本次会话生效 */
+      }
+    });
+  }
 })();
