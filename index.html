@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人作品集 | Portfolio</title>
+  <meta name="description" content="个人作品集网站，展示 Web 前端、数据分析与 AI 应用项目。">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="主导航">
+      <a class="brand" href="#top">Portfolio<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">关于</a></li>
+        <li><a href="#projects">作品</a></li>
+        <li><a href="#skills">技能</a></li>
+        <li><a href="#contact">联系</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <p class="hero-kicker">AI 辅助应用开发 · 课程作品集</p>
+      <h1 class="hero-title">你好，我是一名<br><em>AI 应用开发学习者</em></h1>
+      <p class="hero-sub">把想法做成能跑起来的小产品：网页、数据分析和后端接口。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects">查看作品</a>
+        <a class="btn btn-ghost" href="#contact">联系我</a>
+      </div>
+    </section>
+
+    <section id="about" class="section container">
+      <h2 class="section-title">关于我</h2>
+      <div class="about-grid">
+        <p class="about-text">
+          我正在学习 AI 辅助应用开发：用 AI 编程工具完成从需求梳理、编码实现到验证部署的完整流程，
+          重点关注网页开发、数据清洗分析与后端接口设计。这个作品集记录了课程中的实践项目。
+        </p>
+        <ul class="facts">
+          <li><span class="fact-label">方向</span><span>Web 前端 / 数据分析 / 后端服务</span></li>
+          <li><span class="fact-label">工具</span><span>AI 编程助手、Git、Python</span></li>
+          <li><span class="fact-label">状态</span><span>持续学习中</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects" class="section container">
+      <h2 class="section-title">作品</h2>
+      <div class="filters" id="filters" aria-label="项目分类筛选">
+        <button class="filter is-active" data-filter="all">全部</button>
+        <button class="filter" data-filter="web">Web 前端</button>
+        <button class="filter" data-filter="data">数据分析</button>
+        <button class="filter" data-filter="ai">AI 应用</button>
+        <button class="filter" data-filter="backend">后端服务</button>
+      </div>
+      <div class="projects" id="projects-grid">
+        <article class="card" data-category="web">
+          <div class="card-cover cover-blue" aria-hidden="true">🧩</div>
+          <div class="card-body">
+            <h3>个人作品集网站</h3>
+            <p>使用原生 HTML / CSS / JavaScript 搭建的响应式个人主页，支持项目分类筛选。</p>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+          </div>
+        </article>
+        <article class="card" data-category="web">
+          <div class="card-cover cover-green" aria-hidden="true">✅</div>
+          <div class="card-body">
+            <h3>智能待办清单</h3>
+            <p>支持新增、完成、筛选与本地保存的待办事项应用，移动端同样可用。</p>
+            <ul class="tags"><li>JavaScript</li><li>localStorage</li></ul>
+          </div>
+        </article>
+        <article class="card" data-category="data">
+          <div class="card-cover cover-purple" aria-hidden="true">📊</div>
+          <div class="card-body">
+            <h3>销售数据分析看板</h3>
+            <p>基于清洗后的销售数据完成概况、分类、热销与趋势分析，支持按时间与分类筛选。</p>
+            <ul class="tags"><li>Python</li><li>pandas</li><li>matplotlib</li></ul>
+          </div>
+        </article>
+        <article class="card" data-category="data">
+          <div class="card-cover cover-orange" aria-hidden="true">🧹</div>
+          <div class="card-body">
+            <h3>数据清洗小工具</h3>
+            <p>检查缺失值、重复记录、极端值、非法日期与信息不一致，输出清洗结果与处理报告。</p>
+            <ul class="tags"><li>Python</li><li>数据质量</li></ul>
+          </div>
+        </article>
+        <article class="card" data-category="ai">
+          <div class="card-cover cover-pink" aria-hidden="true">🤖</div>
+          <div class="card-body">
+            <h3>AI 文案助手</h3>
+            <p>调用大模型接口生成与润色文案的小工具，支持多种语气与长度选项。</p>
+            <ul class="tags"><li>API</li><li>Prompt</li></ul>
+          </div>
+        </article>
+        <article class="card" data-category="backend">
+          <div class="card-cover cover-cyan" aria-hidden="true">🔌</div>
+          <div class="card-body">
+            <h3>销售数据后端服务</h3>
+            <p>基于 FastAPI 与 MySQL 的销售数据接口：上传、商品与销售查询、四类统计。</p>
+            <ul class="tags"><li>FastAPI</li><li>MySQL</li></ul>
+          </div>
+        </article>
+      </div>
+      <p class="empty-tip" id="empty-tip" hidden>该分类下暂无作品</p>
+    </section>
+
+    <section id="skills" class="section container">
+      <h2 class="section-title">技能</h2>
+      <div class="skills">
+        <div class="skill">
+          <span class="skill-name">HTML / CSS / JavaScript</span>
+          <div class="bar"><i style="width:82%"></i></div>
+        </div>
+        <div class="skill">
+          <span class="skill-name">Python 数据处理（pandas）</span>
+          <div class="bar"><i style="width:75%"></i></div>
+        </div>
+        <div class="skill">
+          <span class="skill-name">SQL / MySQL</span>
+          <div class="bar"><i style="width:68%"></i></div>
+        </div>
+        <div class="skill">
+          <span class="skill-name">Git 版本管理</span>
+          <div class="bar"><i style="width:70%"></i></div>
+        </div>
+        <div class="skill">
+          <span class="skill-name">AI 编程工具使用</span>
+          <div class="bar"><i style="width:85%"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section container">
+      <h2 class="section-title">联系我</h2>
+      <p class="contact-text">欢迎交流课程项目与技术问题。</p>
+      <div class="contact-links">
+        <!-- 提交前可将以下邮箱与链接替换为你自己的信息 -->
+        <a class="btn btn-primary" href="mailto:your_email@example.com">发送邮件</a>
+        <a class="btn btn-ghost" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Portfolio · 用 AI 辅助开发完成</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
